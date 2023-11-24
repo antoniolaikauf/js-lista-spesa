@@ -8,12 +8,16 @@ const listaUl = document.getElementById("lista-spesa");
 // prendere elemento da input 
 let itemsPersonale =document.getElementById("prodotto-personale");
 
+// display di errore
+const errore=document.getElementById("errore");
+
 // aggiungere evento per mettere item scelto entro lista
 let button = document.getElementById("aggiungi");
 button.addEventListener("click", function () {
     // controllare se ha aggiunto un elemento
     if(itemsPersonale.value === "" ){
-       console.log("l'utente deve aggiungere un prodotto");
+        // display di errore
+       errore.innerHTML="errore"
     }else{
          // item scelto dall'utente
         let valore = itemsPersonale.value;
@@ -22,6 +26,8 @@ button.addEventListener("click", function () {
         listaUl.append(itemUtente);
         // svuotamento dell'input
         itemsPersonale.value="";
+        // tolto display di errore
+        errore.innerHTML=""
     }
 })
 
