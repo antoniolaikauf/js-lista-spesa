@@ -11,13 +11,18 @@ let itemsPersonale =document.getElementById("prodotto-personale");
 // aggiungere evento per mettere item scelto entro lista
 let button = document.getElementById("aggiungi");
 button.addEventListener("click", function () {
-    // item scelto dall'utente
-    let valore = itemsPersonale.value;
-    let itemUtente= document.createElement("li");
-    itemUtente.append(valore);
-    listaUl.append(itemUtente);
-    // svuotamento dell'input
-    itemsPersonale.value="";
+    // controllare se ha aggiunto un elemento
+    if(itemsPersonale.value === "" ){
+       console.log("l'utente deve aggiungere un prodotto");
+    }else{
+         // item scelto dall'utente
+        let valore = itemsPersonale.value;
+        let itemUtente= document.createElement("li");
+        itemUtente.append(valore);
+        listaUl.append(itemUtente);
+        // svuotamento dell'input
+        itemsPersonale.value="";
+    }
 })
 
 // creazione del loop while
